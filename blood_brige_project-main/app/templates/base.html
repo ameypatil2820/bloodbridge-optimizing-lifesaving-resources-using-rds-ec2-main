@@ -8,7 +8,7 @@
     <title>LifeLink - Premium Blood Donation Management System</title>
     <meta name="description" content="LifeLink connects blood donors, hospitals, and blood banks in real-time. Join our community to save lives through seamless, secure blood donation.">
     <meta name="keywords" content="blood donation, find blood donor, emergency blood request, donor network, blood bank, hospital database, LifeLink">
-    <meta name="author" content="Balaji Patil">
+    <meta name="author" content="Amey Patil">
     <meta name="theme-color" content="#be123c">
 
     <!-- Open Graph / Facebook -->
@@ -146,7 +146,7 @@
                     {% else %}
                     <a href="{{ url_for('auth.login') }}" class="text-gray-600 hover:text-primary-600 font-semibold px-4 py-2 rounded-xl text-sm transition duration-150">Sign in</a>
                     <a href="{{ url_for('auth.register', user_type='donor') }}" class="ml-3 inline-flex items-center px-4 py-2.5 border border-transparent text-sm font-bold rounded-xl text-white bg-gradient-to-r from-primary-600 to-rose-500 hover:from-primary-700 hover:to-rose-600 shadow-premium hover:shadow-premium-hover transform hover:-translate-y-0.5 transition duration-150">
-                        Register
+                        Sign Up
                     </a>
                     {% endif %}
                 </div>
@@ -203,7 +203,7 @@
             {% else %}
                 <div class="pt-4 pb-3 border-t border-rose-50 px-6 space-y-2">
                     <a href="{{ url_for('auth.login') }}" class="block w-full text-center px-4 py-2.5 rounded-xl text-base font-semibold text-gray-600 bg-gray-50 hover:bg-gray-100">Sign in</a>
-                    <a href="{{ url_for('auth.register', user_type='donor') }}" class="block w-full text-center px-4 py-2.5 rounded-xl text-base font-bold text-white bg-gradient-to-r from-primary-600 to-rose-500">Register</a>
+                    <a href="{{ url_for('auth.register', user_type='donor') }}" class="block w-full text-center px-4 py-2.5 rounded-xl text-base font-bold text-white bg-gradient-to-r from-primary-600 to-rose-500">Sign Up</a>
                 </div>
             {% endif %}
         </div>
@@ -252,7 +252,7 @@
                     </a>
                 </div>
                 <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-                    &copy; 2026 Balaji Patil. All rights reserved.
+                    &copy; 2026 Amey Patil. All rights reserved.
                 </p>
             </div>
         </div>

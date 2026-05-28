@@ -21,9 +21,15 @@
                 Join our modern community of donors, hospitals, and blood banks. Your simple act of donation can shine a light on someone's life today.
             </p>
             <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="{{ url_for('auth.register', user_type='donor') }}" class="px-8 py-4 text-base font-extrabold rounded-2xl text-primary-950 bg-white hover:bg-rose-50 shadow-lg transform hover:-translate-y-0.5 transition duration-150">
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('main.dashboard') }}" class="px-8 py-4 text-base font-extrabold rounded-2xl text-primary-900 bg-white hover:bg-rose-50 shadow-lg transform hover:-translate-y-0.5 transition duration-150">
+                    Go to Dashboard
+                </a>
+                {% else %}
+                <a href="{{ url_for('auth.register', user_type='donor') }}" class="px-8 py-4 text-base font-extrabold rounded-2xl text-primary-900 bg-white hover:bg-rose-50 shadow-lg transform hover:-translate-y-0.5 transition duration-150">
                     Become a Donor
                 </a>
+                {% endif %}
                 <a href="{{ url_for('main.blood_inventory') }}" class="px-8 py-4 text-base font-extrabold rounded-2xl text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transform hover:-translate-y-0.5 transition duration-150">
                     Check Inventory
                 </a>
@@ -241,11 +247,21 @@
             Start saving lives today.
         </h2>
         <p class="mt-6 text-lg text-rose-100 max-w-2xl mx-auto font-medium">
+            {% if current_user.is_authenticated %}
+            View your dashboard to manage your donation history, check certificates, and see your impact.
+            {% else %}
             Register in seconds and step forward as a vital donor in our local emergency healthcare support network.
+            {% endif %}
         </p>
-        <a href="{{ url_for('auth.register', user_type='donor') }}" class="mt-10 inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-extrabold rounded-2xl text-primary-950 bg-white hover:bg-rose-50 shadow-lg transform hover:-translate-y-0.5 transition duration-150">
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('main.dashboard') }}" class="mt-10 inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-extrabold rounded-2xl text-primary-900 bg-white hover:bg-rose-50 shadow-lg transform hover:-translate-y-0.5 transition duration-150">
+            Go to Dashboard
+        </a>
+        {% else %}
+        <a href="{{ url_for('auth.register', user_type='donor') }}" class="mt-10 inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-extrabold rounded-2xl text-primary-900 bg-white hover:bg-rose-50 shadow-lg transform hover:-translate-y-0.5 transition duration-150">
             Sign up now
         </a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
